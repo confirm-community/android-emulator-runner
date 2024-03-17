@@ -45,8 +45,8 @@ export async function installAndroidSdk(apiLevel: string, target: string, arch: 
 
     await exec.exec(`sh -c \\"sdkmanager --install 'build-tools;${BUILD_TOOLS_VERSION}' platform-tools > /dev/null"`);
 
-    console.log('Installing latest emulator.');
-    await exec.exec(`sh -c \\"sdkmanager --install emulator --channel=${channelId} > /dev/null"`);
+    // console.log('Installing latest emulator.');
+    // await exec.exec(`sh -c \\"sdkmanager --install emulator --channel=${channelId} > /dev/null"`);
 
     if (emulatorBuild) {
       console.log(`Installing emulator build ${emulatorBuild}.`);

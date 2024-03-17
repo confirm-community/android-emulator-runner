@@ -68,8 +68,8 @@ export async function installAndroidSdk(apiLevel: string, target: string, arch: 
       await exec.exec(`unzip -o -q emulator.zip -d ${process.env.ANDROID_HOME}`);
       await io.rmRF('emulator.zip');
     }
-    console.log('Installing system images.');
-    await exec.exec(`sh -c \\"sdkmanager --install 'system-images;android-${apiLevel};${target};${arch}' --channel=${channelId} > /dev/null"`);
+    // console.log('Installing system images.');
+    // await exec.exec(`sh -c \\"sdkmanager --install 'system-images;android-${apiLevel};${target};${arch}' --channel=${channelId} > /dev/null"`);
 
     if (ndkVersion) {
       console.log(`Installing NDK ${ndkVersion}.`);

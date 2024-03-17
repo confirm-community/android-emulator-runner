@@ -176,6 +176,9 @@ async function run() {
     });
     console.log(`::endgroup::`);
 
+    // accept all Android SDK licenses
+    await exec.exec(`sh -c \\"yes | sdkmanager --licenses > /dev/null"`);
+
     // install SDK
     await installAndroidSdk(apiLevel, target, arch, channelId, emulatorBuild, ndkVersion, cmakeVersion);
 
